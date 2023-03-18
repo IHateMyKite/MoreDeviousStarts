@@ -33,10 +33,10 @@ Function SelectOldSchoolSuit(ObjectReference akSpeakerRef)
     SetSuit(30)
 EndFunction
 Function SelectTransparentSuit(ObjectReference akSpeakerRef)
-    SetSuit(30)
+    SetSuit(40)
 EndFunction
 Function SelectRopeSuit(ObjectReference akSpeakerRef)
-    SetSuit(40)
+    SetSuit(50)
 EndFunction
 Function SelectRestrictiveSuit(ObjectReference akSpeakerRef)
     SetSuit(60)
