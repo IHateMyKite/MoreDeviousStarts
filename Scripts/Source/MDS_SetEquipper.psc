@@ -25,102 +25,83 @@ Function RuberDollSet()
         int gag = Utility.randomInt(1,3)
         if gag == 1
             if DSmain.color == 1
-                libs.LockDevice(Player,libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+                LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
             else
-                libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+                LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
             endif
         elseif gag == 2
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ring"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ring"))
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-pad"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-pad"))
         endif    
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
     if DSmain.headGear == 4
         ;if (DSmain.color == 1)
-        ;    libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
-        ;    Utility.wait(0.5)
-        ;    libs.LockDevice(Player,libsx.zadx_hood_rubber_openeyes_black_Inventory)
+        ;    LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        ;    DSmain.WaitLock(0.5)
+        ;    LockDevice(libsx.zadx_hood_rubber_openeyes_black_Inventory)
         ;else
-            libs.LockDevice(Player,libsx.zadx_hood_rubber_black_Inventory)
+            LockDevice(libsx.zadx_hood_rubber_black_Inventory)
         ;endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-tube"))
     endif
-    Utility.wait(0.5)    
     if (DSmain.hardcore)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs()
         endif
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.beltPadded)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.braPadded)
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libs.beltPadded)
+        LockDevice(libs.braPadded)
 
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"collar"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"socks"))
-        ;Utility.wait(0.5)
-        ;libs.LockDevice(Player,libsx.zadx_AnkleShackles_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"catsuit"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"elbowbinder"))
-        ;libs.LockDevice(Player,libs.zad_armBinderHisec_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"collar"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"socks"))
+        ;LockDevice(libsx.zadx_AnkleShackles_Silver_Inventory)
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"catsuit"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"elbowbinder"))
+        ;LockDevice(libs.zad_armBinderHisec_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugInflatableAn)
+            LockDevice(libs.plugSoulgemVag)
+            LockDevice(libs.plugInflatableAn)
         endif
 
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.beltPadded)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.braPadded)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"collar"))
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libs.beltPadded)
+        LockDevice(libs.braPadded)
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"collar"))
 
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"catsuit"))
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"socks"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
+            LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"catsuit"))
+            LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"socks"))
         else
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"catsuit"))
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"socks"))
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"catsuit"))
+            LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"socks"))
         endif
 
     endif
@@ -146,42 +127,40 @@ Function StraitjacketSet()
         int gag = Utility.randomInt(1,3)
         if gag == 1
             if DSmain.color == 1
-                libs.LockDevice(Player,libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+                LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
             else
-                libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+                LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
             endif
         elseif gag == 2
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ring"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ring"))
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-pad"))
-        endif    
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-pad"))
+        endif
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_rubber_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_rubber_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        DSmain.WaitLock(0.5)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-tube"))
     endif
 
-    Utility.wait(0.5)
     if (DSmain.hardcore)
         
         if(DSmain.useAbadonPlug)
@@ -189,56 +168,39 @@ Function StraitjacketSet()
         else
             DSmain.equipHardcorePlugs()
         endif
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        
-        libs.LockDevice(Player,libs.beltPadded)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.braPadded)
-
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"collar"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        
-        Utility.wait(0.5)
-        if Utility.randomInt(0,1)    
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"catsuit-open"))
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libs.beltPadded)
+        LockDevice(libs.braPadded)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"collar"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        if Utility.randomInt(0,1)
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"catsuit-open"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
         else
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
         endif
         
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugInflatableAn)
+            LockDevice(libs.plugSoulgemVag)
+            LockDevice(libs.plugInflatableAn)
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.beltIron)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"collar"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        Utility.wait(0.5)
-        if Utility.randomInt(0,1)    
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libs.beltIron)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"collar"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        if Utility.randomInt(0,1)
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
         else
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"normal"))
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"normal"))
         endif
     endif
-
 
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
     DSmain.registerForSingleUpdate(5)
@@ -253,15 +215,15 @@ Function OldSchoolSet()
     if (DSmain.headGear == 1 || DSmain.headGear == 3)
         int gag = Utility.randomInt(1,3)
         if gag == 1
-            libs.LockDevice(Player,libs.gagBall)
+            LockDevice(libs.gagBall)
         elseif gag == 2
-            libs.LockDevice(Player,libs.gagRing)
+            LockDevice(libs.gagRing)
         else
-            libs.LockDevice(Player,libs.gagPanel)
+            LockDevice(libs.gagPanel)
         endif
     endif
     if (DSmain.headGear == 2 || DSmain.headGear == 3)
-        libs.LockDevice(Player,libs.blindfold)
+        LockDevice(libs.blindfold)
     endif
     
     if DSmain.hardcore
@@ -270,37 +232,26 @@ Function OldSchoolSet()
         else
             DSmain.equipHardcorePlugs()
         endif
-        
-        libs.LockDevice(Player,libs.zad_armBinderHisec_Inventory)
-
+        LockDevice(libs.zad_armBinderHisec_Inventory)
     else
 
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugSoulgemAn)
+            LockDevice(libs.plugSoulgemVag)
+            LockDevice(libs.plugSoulgemAn)
         endif
-        libs.LockDevice(Player,libs.armbinder)
+        LockDevice(libs.armbinder)
     endif
 
-    libs.LockDevice(Player,libs.piercingVSoul)
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libs.piercingNSoul)
-
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libs.beltpadded)
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libs.braPadded)
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libs.cuffsPaddedLegs)
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libs.cuffsPaddedArms)
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libs.collarPosture)
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libsx.bootsLocking)
+    LockDevice(libs.piercingVSoul)
+    LockDevice(libs.piercingNSoul)
+    LockDevice(libs.beltpadded)
+    LockDevice(libs.braPadded)
+    LockDevice(libs.cuffsPaddedLegs)
+    LockDevice(libs.cuffsPaddedArms)
+    LockDevice(libs.collarPosture)
+    LockDevice(libsx.bootsLocking)
 
 
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
@@ -315,81 +266,63 @@ Function TransparentSet()
     endif
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,libsx.wtEboniteBlindfold)
+        LockDevice(libsx.wtEboniteBlindfold)
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_rubber_transparent_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.wtEboniteBlindfold)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_rubber_transparent_Inventory)
+        LockDevice(libsx.wtEboniteBlindfold)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.wtEboniteBlindfold)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.wtEboniteBlindfold)
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_white_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_white_Inventory)
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_filter_white_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_filter_white_Inventory)
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_rebr_white_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_rebr_white_Inventory)
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_tube_white_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_tube_white_Inventory)
     endif
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-    Utility.wait(0.5)
+    
+    LockDevice(libsx.PiercingsCommonSoulVag)
     if (DSmain.hardcore)
-
-        libs.LockDevice(Player,libsx.zadx_HobbleDressTransparentInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_restrictiveBootsTrans_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_restrictiveCollarTrans_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_restrictiveCorsetTrans_Inventory)
+        LockDevice(libsx.zadx_HobbleDressTransparentInventory)
+        LockDevice(libsx.zadx_restrictiveBootsTrans_Inventory)
+        LockDevice(libsx.zadx_restrictiveCollarTrans_Inventory)
+        LockDevice(libsx.zadx_restrictiveCorsetTrans_Inventory)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs()
         endif
         
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_AnkleShackles_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_yoke_steel_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_PawBondageMittensWhiteInventory)
-
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_AnkleShackles_Silver_Inventory)
+        LockDevice(libsx.zadx_yoke_steel_Inventory)
+        LockDevice(libsx.zadx_PawBondageMittensWhiteInventory)
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libsx.PlugsFilledSoulVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugInflatableAn)
+            LockDevice(libsx.PlugsFilledSoulVag)
+            LockDevice(libs.plugInflatableAn)
         endif
-        libs.LockDevice(Player,libsx.zadx_catsuit_boots_transparent_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_catsuit_transparent_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.wtEboniteArmbinder)
+        LockDevice(Game.GetFormFromFile(0x00182E,"Devious Devices - Expansion.esm") as Armor)
+        LockDevice(libsx.zadx_catsuit_boots_transparent_Inventory)
+        ;LockDevice(libsx.zadx_catsuit_transparent_Inventory)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(libsx.wtEboniteArmbinder)
     endif
 
 
@@ -406,75 +339,61 @@ Function RopeSet()
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,libsx.zadx_gag_rope_bit_Inventory)
+            LockDevice(libsx.zadx_gag_rope_bit_Inventory)
         else
-            libs.LockDevice(Player,libsx.zadx_gag_rope_ball_Inventory)
+            LockDevice(libsx.zadx_gag_rope_ball_Inventory)
         endif
         
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,libsx.zadx_blindfold_Rope_Inventory)
+        LockDevice(libsx.zadx_blindfold_Rope_Inventory)
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx.eboniteBlindfold)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_leather_black_Inventory)
+        LockDevice(libsx.eboniteBlindfold)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_leather_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.eboniteBlindfold)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.eboniteBlindfold)
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_black_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_black_Inventory)
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_filter_black_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_filter_black_Inventory)
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_rebr_black_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_rebr_black_Inventory)
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,libsx.zadx_catsuit_gasmask_tube_black_Inventory)
+        LockDevice(libsx.zadx_catsuit_gasmask_tube_black_Inventory)
     endif
-    Utility.wait(0.5)
-    libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-    Utility.wait(0.5)
+    
+    LockDevice(libsx.PiercingsCommonSoulVag)
+    
     if (DSmain.hardcore)
-        libs.LockDevice(Player,libsx.zadx_Collar_Rope_1_Inventory)
+        LockDevice(libsx.zadx_Collar_Rope_1_Inventory)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs()
         endif
-        
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_Harness_Rope_Full_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_Armbinder_Rope_Strict_Inventory)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_Harness_Rope_Full_Inventory)
+        LockDevice(libsx.zadx_Armbinder_Rope_Strict_Inventory)
     else
-        libs.LockDevice(Player,libsx.zadx_Collar_Rope_2_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx2.zadx_rope_cuffs_legs_Inventory)
-        Utility.wait(0.5)
+        LockDevice(libsx.zadx_Collar_Rope_2_Inventory)
+        LockDevice(libsx2.zadx_rope_cuffs_legs_Inventory)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libsx.PlugsFilledSoulVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugInflatableAn)
+            LockDevice(libsx.PlugsFilledSoulVag)
+            LockDevice(libs.plugInflatableAn)
         endif
-
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx2.zadx_rope_crotch_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_Armbinder_Rope_Inventory)
+        LockDevice(libsx2.zadx_rope_crotch_Inventory)
+        LockDevice(libsx.zadx_Armbinder_Rope_Inventory)
     endif
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
     DSmain.registerForSingleUpdate(5)
@@ -500,31 +419,29 @@ Function RestrictiveSet()
     endif
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
-        libs.LockDevice(Player,libsx2.zadx_Gag_Ball_Extreme_Red_Inventory)
+        LockDevice(libsx2.zadx_Gag_Ball_Extreme_Red_Inventory)
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(sec_color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"blindfold"))
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_rubber_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_rubber_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(sec_color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"blindfold"))
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(sec_color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"gasmask-tube"))
     endif
     
     if (DSmain.hardcore)
@@ -534,68 +451,43 @@ Function RestrictiveSet()
             DSmain.equipHardcorePlugs()
         endif
         
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-collar"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-        Utility.wait(0.5)
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-collar"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
 
         int randomdevice = Utility.randomInt(1,3)
         if randomdevice == 1
-            libs.LockDevice(Player,libsx2.zadx_elbowshackles_Inventory)
+            LockDevice(libsx2.zadx_elbowshackles_Inventory)
         elseif randomdevice == 2
-            libs.LockDevice(Player,libsx.zadx_yoke_steel_Inventory)
+            LockDevice(libsx.zadx_yoke_steel_Inventory)
         else 
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(sec_color,"armbinder"))
+            LockDevice(DSmain.randomColorNormDevice(sec_color,"armbinder"))
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(sec_color,"mittens"))
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"mittens"))
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugInflatableAn)
+            LockDevice(libs.plugSoulgemVag)
+            LockDevice(libs.plugInflatableAn)
         endif
 
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-
-        Utility.wait(1.0)
-
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-collar"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-gloves"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-
-        Utility.wait(1.0)
-
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(sec_color,"armbinder"))
-        Utility.wait(0.5)
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-collar"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-gloves"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"armbinder"))
     endif
     
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
@@ -615,13 +507,13 @@ Function SimpleSet()
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
         if(DSmain.color == 1)
-            libs.LockDevice(Player,libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+            LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
         endif
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if (DSmain.hardcore)
@@ -631,47 +523,35 @@ Function SimpleSet()
             DSmain.equipHardcorePlugs()
         endif
         
-        Utility.wait(1.0)
-
-            
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        ;libs.LockDevice(Player,libsx.bootsLocking)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        ;LockDevice(libsx.bootsLocking)
         
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"collar"))    
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.beltIron)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"collar"))
+            LockDevice(libs.beltIron)
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
         endif
 
-        Utility.wait(1.0)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-        libs.lockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.plugInflatableAn)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libs.piercingVSoul)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
+            LockDevice(libs.plugSoulgemVag)
+            LockDevice(libs.plugInflatableAn)
+            LockDevice(libs.piercingVSoul)
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
         endif
 
-        Utility.wait(0.5)
-        ;libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        ;libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        ;LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        ;LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
         ;if Utility.randomInt(0,1)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
         ;endif
-
     endif
 
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
@@ -693,111 +573,90 @@ Function NormalSet()
         int gag = Utility.randomInt(1,3)
         if gag == 1
             if DSmain.color == 1
-                libs.LockDevice(Player,libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+                LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
             else
-                libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+                LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
             endif
         elseif gag == 2
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ring"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ring"))
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-pad"))
-        endif    
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-pad"))
+        endif
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_rubber_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_rubber_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
-    Utility.wait(0.5)
+    DSmain.WaitLock(0.5)
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
     endif
-
-    Utility.wait(0.5)
+    
     if (DSmain.hardcore)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs()
         endif
-        libs.LockDevice(Player,libsx.PiercingsShockSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Arms_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
+        LockDevice(libsx.PiercingsShockSoulVag)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Arms_Silver_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
         if(Utility.randomInt(0,1))
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_AnkleShackles_Silver_Inventory)
-        Utility.wait(0.5)
+        LockDevice(libsx.zadx_AnkleShackles_Silver_Inventory)
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"elbowbinder"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"elbowbinder"))
         else
-            libs.LockDevice(Player,libs.zad_armBinderHisec_Inventory)
+            LockDevice(libs.zad_armBinderHisec_Inventory)
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libsx.PlugsGreaterSoulVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libsx.PlugsGreaterSoulAnl)
+            LockDevice(libsx.PlugsGreaterSoulVag)
+            LockDevice(libsx.PlugsGreaterSoulAnl)
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulNips)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Arms_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Legs_Silver_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
+        
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.PiercingsCommonSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Silver_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Arms_Silver_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Legs_Silver_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        
         if(Utility.randomInt(0,1))
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-boots"))
         else
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
         endif
 
-        Utility.wait(0.5)
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
         else
-            libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
+            LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"open"))
         endif
-        Utility.wait(0.5)
     endif
 
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
@@ -816,114 +675,84 @@ Function HardSet()
     endif
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
-        libs.LockDevice(Player,libsx2.zadx_Gag_Ball_Extreme_Red_Inventory)
+        LockDevice(libsx2.zadx_Gag_Ball_Extreme_Red_Inventory)
     EndIf
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_rubber_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_rubber_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
-    Utility.wait(0.5)
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
     endif
-    Utility.wait(0.5)
     if (DSmain.hardcore)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs()
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-
-        Utility.wait(0.5)
-
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Arms_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Legs_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"ballet"))
-        Utility.wait(0.5)
+        LockDevice(libsx.PiercingsShockSoulVag)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Gold_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Gold_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Arms_Gold_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Legs_Gold_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"ballet"))
         int random = Utility.randomInt(1,3)
         if  random == 1
-            libs.LockDevice(Player,libsx2.zadx_elbowshacklesHook_Inventory)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"hobble"))
+            LockDevice(libsx2.zadx_elbowshacklesHook_Inventory)
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"hobble"))
         elseif random == 2
-            libs.LockDevice(Player,libsx.zadx_yoke_steel_Inventory)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"hobble"))
+            LockDevice(libsx.zadx_yoke_steel_Inventory)
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"hobble"))
         else
             if (Utility.randomInt(0,1))
-                libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"leg-open"))
+                LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"leg-open"))
             else
-                libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"hobbl-open"))
+                LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"hobbl-open"))
             endif
 
         endif
 
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libsx.PlugsGrandSoulVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libsx.PlugsGrandSoulAnl)
+            LockDevice(libsx.PlugsGrandSoulVag)
+            LockDevice(libsx.PlugsGrandSoulAnl)
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulNips)
-
-        Utility.wait(0.5)    
-
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Arms_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Legs_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-collar"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"ballet"))
-        Utility.wait(0.5)
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.PiercingsCommonSoulNips)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Gold_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Gold_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Arms_Gold_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Legs_Gold_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-collar"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"ballet"))
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
-            libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"hobble"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"hobble"))
         else
             if (Utility.randomInt(0,1))
-                libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"leg-open"))
+                LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"leg-open"))
             else
-                libs.LockDevice(Player,DSmain.randomColorStraitjacketDevice(DSmain.color,"hobbl-open"))
+                LockDevice(DSmain.randomColorStraitjacketDevice(DSmain.color,"hobbl-open"))
             endif
         endif
 
@@ -943,107 +772,73 @@ Function ChainSet()
     if DSmain.headGear == 1 || DSmain.headGear == 3
         int gag = Utility.randomInt(1,3)
         if gag == 1
-            libs.LockDevice(Player,libsx.zadx_HR_PearGagInventory)
+            LockDevice(libsx.zadx_HR_PearGagInventory)
         elseif gag == 2
-            libs.LockDevice(Player,libsx.zadx_HR_IronBitGagInventory)
+            LockDevice(libsx.zadx_HR_IronBitGagInventory)
         else
-            libs.LockDevice(Player,libsx.zadx_HR_IronRingGagInventory)
-        endif    
+            LockDevice(libsx.zadx_HR_IronRingGagInventory)
+        endif
     endif
     
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(1,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(1,"blindfold"))
     endif
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_leather_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_leather_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(1,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(1,"blindfold"))
     endif
-    Utility.wait(0.5)
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
     endif
-    Utility.wait(0.5)
-
     if (DSmain.hardcore)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs()
         endif
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
-        
-        Utility.wait(0.5)
-
-        libs.LockDevice(Player,libs.beltIron)
-
-        Utility.wait(0.5)
-        
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessBodyInventory)
-
-        Utility.wait(0.5)
-
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessArmsInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessBraInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessLegsInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessGlovesInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessBootsInventory)
-        Utility.wait(0.5)
+        LockDevice(libsx.PiercingsShockSoulVag)
+        LockDevice(libsx.PiercingsShockSoulNips)
+        LockDevice(libs.beltIron)
+        LockDevice(libsx.zadx_HR_ChainHarnessBodyInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessArmsInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessBraInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessLegsInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessGlovesInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessBootsInventory)
         if Utility.randomInt(0,1)
-            libs.LockDevice(Player,libsx2.zadx_elbowshackles_Inventory)
+            LockDevice(libsx2.zadx_elbowshackles_Inventory)
         else
-            libs.LockDevice(Player,libs.Yoke)
+            LockDevice(libs.Yoke)
         endif
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libsx.PlugsBlackSoulVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libsx.PlugsBlackSoulAnl)
+            LockDevice(libsx.PlugsBlackSoulVag)
+            LockDevice(libsx.PlugsBlackSoulAnl)
         endif
 
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.PiercingsCommonSoulNips)
-
-        Utility.wait(0.5)    
-        libs.LockDevice(Player,libs.beltIron)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessBodyInventory)
-
-        Utility.wait(0.5)    
-
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessArmsInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessBraInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessLegsInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessGlovesInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_ChainHarnessBootsInventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_HR_IronCuffsFrontInventory)
+        LockDevice(libsx.PiercingsCommonSoulVag)
+        LockDevice(libsx.PiercingsCommonSoulNips)
+        LockDevice(libs.beltIron)
+        LockDevice(libsx.zadx_HR_ChainHarnessBodyInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessArmsInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessBraInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessLegsInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessGlovesInventory)
+        LockDevice(libsx.zadx_HR_ChainHarnessBootsInventory)
+        LockDevice(libsx.zadx_HR_IronCuffsFrontInventory)
 
     endif
 
@@ -1063,84 +858,61 @@ Function PonySet()
     endif
 
     if DSmain.headGear == 1 || DSmain.headGear == 3 
-        libs.LockDevice(Player,libsx.zadx_dud_Pony_Harness_Secure_Ebonite_BlackInventory)
+        LockDevice(libsx.zadx_dud_Pony_Harness_Secure_Ebonite_BlackInventory)
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_leather_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_leather_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
-    Utility.wait(0.5)
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
     endif
-    Utility.wait(0.5)
     if (DSmain.hardcore)
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
             DSmain.equipHardcorePlugs(True,False)
         endif
-        libs.LockDevice(Player,libsx.zadx_HR_PlugPonyTail01Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.beltPadded)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libs.braPadded)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"har-collar"))
-
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"elbowbinder"))
-        Utility.wait(0.5)
-        libs.lockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
+        LockDevice(libsx.zadx_HR_PlugPonyTail01Inventory)
+        LockDevice(libs.beltPadded)
+        LockDevice(libs.braPadded)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"res-corset"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"har-collar"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"elbowbinder"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
 
     else
         if(DSmain.useAbadonPlug)
             equipAbadonPlug()
         else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libsx.PiercingsCommonSoulVag)
-            Utility.wait(0.5)
-            libs.LockDevice(Player,libsx.PiercingsShockSoulNips)
+            LockDevice(libs.plugSoulgemVag)
+            LockDevice(libsx.PiercingsCommonSoulVag)
+            LockDevice(libsx.PiercingsShockSoulNips)
         endif
-        libs.LockDevice(Player,libsx.zadx_HR_PlugPonyTail01Inventory)
-        Utility.wait(0.5)
-
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
-
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
+        LockDevice(libsx.zadx_HR_PlugPonyTail01Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"pony-boots"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"armbinder"))
 
     endif
 
@@ -1158,72 +930,48 @@ Function ChastitySet()
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
             if DSmain.color == 1
-                libs.LockDevice(Player,libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+                LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
             else
-                libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+                LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
             endif
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_hood_leather_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_leather_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
     endif
-    Utility.wait(0.5)
+    
     if (DSmain.hardcore)
-        if(DSmain.useAbadonPlug)
-            equipAbadonPlug()
-        else
-            DSmain.equipHardcorePlugs(True,True)
-        endif
-        Utility.wait(1.0)
-        libs.LockDevice(Player,libsx.zadx_chastitybelt_Padded_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_chastitybra_Padded_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_Collar_Posture_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Arms_Gold_Inventory)
-        Utility.wait(0.5)
-        libs.LockDevice(Player,libsx.zadx_cuffs_Padded_Legs_Gold_Inventory)
-
-        Utility.wait(0.5)
-        libs.lockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
-        ;Utility.wait(0.5)
+        DSmain.equipHardcorePlugs(True,True)
+        LockDevice(libsx.zadx_chastitybelt_Padded_Gold_Inventory)
+        LockDevice(libsx.zadx_chastitybra_Padded_Gold_Inventory)
+        LockDevice(libsx.zadx_Collar_Posture_Gold_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Arms_Gold_Inventory)
+        LockDevice(libsx.zadx_cuffs_Padded_Legs_Gold_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
     else
-        if(DSmain.useAbadonPlug)
-            equipAbadonPlug()
-        else
-            libs.LockDevice(Player,libs.plugSoulgemVag)
-        endif
-        Utility.wait(0.5)
-
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
-        Utility.wait(0.5)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
-
-        ;Utility.wait(1.0)
+        LockDevice(libs.plugSoulgemVag)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"chas-harness"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-arms"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"cuffs-legs"))
     endif
 
     ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
@@ -1243,38 +991,35 @@ Function BrandNewSet()
 
     if DSmain.headGear == 1 || DSmain.headGear == 3
             if DSmain.color == 1
-                libs.LockDevice(Player,libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+                LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
             else
-                libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+                LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
             endif
     endif
     if DSmain.headGear == 2 || DSmain.headGear == 3
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.1)
-        libs.LockDevice(Player,libsx.zadx_hood_leather_black_Inventory)
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(libsx.zadx_hood_leather_black_Inventory)
     endif
 
     if DSmain.headGear > 4
-        libs.LockDevice(Player,libsx2.zadx_gag_tape_Inventory)
-        Utility.wait(0.1)
-        libs.LockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
     endif
 
     if DSmain.headGear == 5
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
     elseif DSmain.headGear == 6
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
     elseif DSmain.headGear == 7
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
     elseif DSmain.headGear == 8
-        libs.LockDevice(Player,DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
     endif
 
-    Utility.wait(0.1)
     if (DSmain.hardcore)
         DSmain.equipHardcorePlugs(True,True)
         if DSmain.color == 1
@@ -1302,9 +1047,9 @@ Function BrandNewSet()
             LockDevice(libsx2.zadx_chastitybelt_Padded_Red_Inventory)
             LockDevice(libsx2.zadx_chastitybra_Padded_Red_Inventory)
         endif
-        libs.lockDevice(Player,DSmain.randomColorNormDevice(DSmain.color,"mittens"))
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"mittens"))
     else
-        libs.LockDevice(Player,libs.plugSoulgemVag)
+        LockDevice(libs.plugSoulgemVag)
         if DSmain.color == 1
             LockDevice(libsx2.zadx_BoxBinder_Inventory)
             LockDevice(libsx2.zadx_cuffs_Padded_Collar_Black_Inventory)
@@ -1328,8 +1073,192 @@ Function BrandNewSet()
     DSmain.registerForSingleUpdate(5)
 EndFunction
 
+Function PetsuitSet()
+    DSmain.spawnPlayer()
+    if DSmain.color == 0
+        DSmain.color = Utility.RandomInt(1,3)
+    endif
+    if DSmain.headGear == 50
+        DSmain.headGear = Utility.randomInt(0,3)
+    endif
+    if DSmain.headGear == 1 || DSmain.headGear == 3
+        if DSmain.color == 1
+            LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+        else
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+        endif
+    endif
+    if DSmain.headGear == 2 || DSmain.headGear == 3
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+    endif
+    if DSmain.headGear == 4
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+         LockDevice(libsx.zadx_hood_leather_black_Inventory)
+    endif
+    if DSmain.headGear > 4
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+    endif
+    if DSmain.headGear == 5
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+    elseif DSmain.headGear == 6
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+    elseif DSmain.headGear == 7
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+    elseif DSmain.headGear == 8
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+    endif
+
+    int sec_color = DSmain.color
+    
+    if (DSmain.hardcore)
+        DSmain.equipHardcorePlugs(True,True)
+        
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"socks"))
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"catsuit"))
+        if DSmain.color == 1
+            LockDevice(libsx2.zadx_PetSuit_Black_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Arms_Black_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Black_Inventory)
+            LockDevice(libsx2.zadx_Collar_Posture_Black_Inventory)
+            LockDevice(libsx2.zadx_chastitybelt_Padded_Black_Inventory)
+            LockDevice(libsx2.zadx_chastitybra_Padded_Black_Inventory)
+        elseif DSmain.color == 2
+            LockDevice(libsx2.zadx_PetSuit_White_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Arms_White_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_White_Inventory)
+            LockDevice(libsx2.zadx_Collar_Posture_White_Inventory)
+            LockDevice(libsx2.zadx_chastitybelt_Padded_White_Inventory)
+            LockDevice(libsx2.zadx_chastitybra_Padded_White_Inventory)
+        elseif DSmain.color == 3
+            LockDevice(libsx2.zadx_PetSuit_Red_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Arms_Red_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Red_Inventory)
+            LockDevice(libsx2.zadx_Collar_Posture_Red_Inventory)
+            LockDevice(libsx2.zadx_chastitybelt_Padded_Red_Inventory)
+            LockDevice(libsx2.zadx_chastitybra_Padded_Red_Inventory)
+        endif
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"mittens"))
+    else
+        LockDevice(libs.plugSoulgemVag)
+        if DSmain.color == 1
+            LockDevice(libsx2.zadx_PetSuit_Black_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Collar_Black_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Black_Inventory)
+            LockDevice(Game.GetFormFromFile(0x001E3D,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
+        elseif DSmain.color == 2
+            LockDevice(libsx2.zadx_PetSuit_White_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Collar_White_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_White_Inventory)
+            LockDevice(Game.GetFormFromFile(0x05735C,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
+        elseif DSmain.color == 3
+            LockDevice(libsx2.zadx_PetSuit_Red_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Collar_Red_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Red_Inventory)
+            LockDevice(Game.GetFormFromFile(0x000E10,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
+        endif
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"mittens"))
+    endif
+    
+    ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
+    DSmain.registerForSingleUpdate(5)
+EndFunction
+
+Function YokeSet()
+    DSmain.spawnPlayer()
+    if DSmain.color == 0
+        DSmain.color = Utility.RandomInt(1,3)
+    endif
+    if DSmain.headGear == 50
+        DSmain.headGear = Utility.randomInt(0,3)
+    endif
+    if DSmain.headGear == 1 || DSmain.headGear == 3
+        if DSmain.color == 1
+            LockDevice(libsx.zadx_GagEboniteHarnessBallBig_Inventory)
+        else
+            LockDevice(DSmain.randomColorNormDevice(DSmain.color,"gag-ball"))
+        endif
+    endif
+    if DSmain.headGear == 2 || DSmain.headGear == 3
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+    endif
+    if DSmain.headGear == 4
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+         LockDevice(libsx.zadx_hood_leather_black_Inventory)
+    endif
+    if DSmain.headGear > 4
+        LockDevice(libsx2.zadx_gag_tape_Inventory)
+        LockDevice(DSmain.randomColorNormDevice(DSmain.color,"blindfold"))
+    endif
+    if DSmain.headGear == 5
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask"))
+    elseif DSmain.headGear == 6
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-filter"))
+    elseif DSmain.headGear == 7
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-rebreather"))
+    elseif DSmain.headGear == 8
+        LockDevice(DSmain.randomColorCatsuitDevice(DSmain.color,"gasmask-tube"))
+    endif
+
+    int sec_color = DSmain.color
+    
+    if Utility.randomInt(0,1)
+        LockDevice(libs.Yoke)
+    else
+        LockDevice(libsx.zadx_yoke_steel_Inventory)
+    endif
+    
+    if (DSmain.hardcore)
+        DSmain.equipHardcorePlugs(True,True)
+        
+        ;LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"socks"))
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"pony-boots"))
+        
+        LockDevice(DSmain.randomColorCatsuitDevice(sec_color,"catsuit"))
+        
+        if DSmain.color == 1
+            LockDevice(libsx2.zadx_cuffs_Padded_Arms_Black_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Black_Inventory)
+            LockDevice(libsx2.zadx_Collar_Posture_Black_Inventory)
+            LockDevice(libsx2.zadx_chastitybelt_Padded_Black_Inventory)
+            LockDevice(libsx2.zadx_chastitybra_Padded_Black_Inventory)
+        elseif DSmain.color == 2
+            LockDevice(libsx2.zadx_cuffs_Padded_Arms_White_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_White_Inventory)
+            LockDevice(libsx2.zadx_Collar_Posture_White_Inventory)
+            LockDevice(libsx2.zadx_chastitybelt_Padded_White_Inventory)
+            LockDevice(libsx2.zadx_chastitybra_Padded_White_Inventory)
+        elseif DSmain.color == 3
+            LockDevice(libsx2.zadx_cuffs_Padded_Arms_Red_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Red_Inventory)
+            LockDevice(libsx2.zadx_Collar_Posture_Red_Inventory)
+            LockDevice(libsx2.zadx_chastitybelt_Padded_Red_Inventory)
+            LockDevice(libsx2.zadx_chastitybra_Padded_Red_Inventory)
+        endif
+        LockDevice(DSmain.randomColorNormDevice(sec_color,"mittens"))
+    else
+        LockDevice(libs.plugSoulgemVag)
+        if DSmain.color == 1
+            LockDevice(libsx2.zadx_cuffs_Padded_Collar_Black_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Black_Inventory)
+            LockDevice(Game.GetFormFromFile(0x001E3D,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
+        elseif DSmain.color == 2
+            LockDevice(libsx2.zadx_cuffs_Padded_Collar_White_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_White_Inventory)
+            LockDevice(Game.GetFormFromFile(0x05735C,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
+        elseif DSmain.color == 3
+            LockDevice(libsx2.zadx_cuffs_Padded_Collar_Red_Inventory)
+            LockDevice(libsx2.zadx_cuffs_Padded_Legs_Red_Inventory)
+            LockDevice(Game.GetFormFromFile(0x000E10,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
+        endif
+    endif
+    
+    ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
+    DSmain.registerForSingleUpdate(5)
+EndFunction
+
 Function LockDevice(Armor akDevice)
-    Utility.wait(0.1)
+    DSmain.WaitLock(0.25)
     libs.LockDevice(Player,akDevice)
 EndFunction
 
@@ -1343,18 +1272,12 @@ EndFunction
 Function equipAbadonPlug()
     if (DSmain.UDinstalled)
         Armor AbadonPlug = Game.getFormFromFile(0x135DDE,"UnforgivingDevices.esp") as Armor
-        ;UnforgivingDevicesMain UDmain = Game.getFormFromFile(0x005901,"UnforgivingDevices.esp") as UnforgivingDevicesMain
-        ;bool tempSet = UDmain.final_finisher_set
-        ;UDmain.final_finisher_set = false
-        ;UD_equipedCustomDevices plugScript = UDCDmain.getFirstDeviceByKeyword(libs.zad_deviousPlug,libs.zad_devious)
-        libs.lockDevice(Player,AbadonPlug)
-        ;UDmain.final_finisher_set = tempSet
+        LockDevice(AbadonPlug)
     endif
 EndFunction
 
-
 Function TreasureHuntingWhore()
-    Utility.Wait(3.0)
+    Utility.wait(3.0)
     Quest THWquest = Game.getFormFromFile(0x005E6F, "TreasureHunterWhore.esp") as Quest
     Quest THWStopSlaveGirl = Game.getFormFromFile(0x0388F1, "TreasureHunterWhore.esp") as Quest
     Quest THWFindTreasure = Game.getFormFromFile(0x000D62, "TreasureHunterWhore.esp") as Quest
@@ -1413,7 +1336,6 @@ Function TreasureHuntingWhore()
     endif
 EndFunction
 
-
 Function TheFacilityDollSuit()
     if DSmain.TheFacilityInstalled
         DSmain.spawnPlayer()
@@ -1426,19 +1348,13 @@ Function TheFacilityDollSuit()
         Armor DollsuitPlugs = Game.getFormFromFile(0x233A42,"The Facility.esp") as Armor
         Armor DollsuitBelt = Game.getFormFromFile(0x233A44,"The Facility.esp") as Armor
         
-        libs.lockDevice(Player,DollsuitMain)
-        ;Utility.wait(0.5)
-        libs.lockDevice(Player,DollsuitHeels)
-        ;Utility.wait(0.5)
-        libs.lockDevice(Player,DollsuitGag)
-        ;Utility.wait(0.5)
-        libs.lockDevice(Player,DollsuitBlindfold)
-        ;Utility.wait(0.5)
-        libs.lockDevice(Player,DollsuitHood)
-        ;Utility.wait(0.5)
-        libs.lockDevice(Player,DollsuitPlugs)
-        ;Utility.wait(0.5)
-        libs.lockDevice(Player,DollsuitBelt)
+        LockDevice(DollsuitMain)
+        LockDevice(DollsuitHeels)
+        LockDevice(DollsuitGag)
+        LockDevice(DollsuitBlindfold)
+        LockDevice(DollsuitHood)
+        LockDevice(DollsuitPlugs)
+        LockDevice(DollsuitBelt)
         
         ARTHLALRumorsOfWarQuest.RegisterForSingleUpdate(0.25)
         DSmain.registerForSingleUpdate(5)
@@ -1462,6 +1378,6 @@ Event OnUpdate()
                 CompleteQuest()
         else
             registerForSingleUpdate(1.0)
-        endif    
+        endif
     endif
 EndEvent

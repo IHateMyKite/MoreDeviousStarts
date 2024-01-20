@@ -39,6 +39,10 @@ elseif DSmain.selectedSet == 120
     Equipper.ChastitySet()
 elseif DSmain.selectedSet == 130
     Equipper.BrandNewSet()
+elseif DSmain.selectedSet == 140
+    Equipper.PetsuitSet()
+elseif DSmain.selectedSet == 150
+    Equipper.YokeSet()
 elseif DSmain.selectedSet == 400
     Equipper.AbadonPlug()
 elseif DSmain.selectedSet == 410

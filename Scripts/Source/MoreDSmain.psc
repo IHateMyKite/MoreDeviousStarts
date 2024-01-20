@@ -48,7 +48,6 @@ Event OnInit()
     MDSReady = True
 EndEvent
 
-
 Function maintenance()
     checkCompatibility()
     DD52installed = Game.GetFormFromFile(0x05859F,"Devious Devices - Expansion.esm") ;use last added device to 5.2 beta to see if beta is installed
@@ -105,7 +104,7 @@ Function setDS()
     else
         ;sets
         if (selectedSet == -1)
-            selectedSet = Utility.randomInt(1,12)*10
+            selectedSet = Utility.randomInt(1,15)*10
         endif
         ChargenQuest.SetAddonQuestStage(1 , ThisQuest)
     endif
@@ -151,6 +150,12 @@ Function spawnPlayer()
     registerForSingleUpdate(15)
 EndFunction
 
+Function WaitLock(Float afTime)
+    ;UD adds mutexes, and is no longer needed to wait between lock oprations
+    if !UDinstalled
+        Utility.wait(afTime)
+    endif
+EndFunction
 
 Armor Function randomColorCatsuitDevice(int col = 0,string dev = "catsuit")
     if (col == 0)

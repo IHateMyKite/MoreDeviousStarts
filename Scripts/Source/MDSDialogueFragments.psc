@@ -60,8 +60,13 @@ Function SelectChastitySuit(ObjectReference akSpeakerRef)
     SetSuit(120)
 EndFunction
 Function SelectBrandNewSuit(ObjectReference akSpeakerRef)
-    ConsoleUtil.PrintMessage("SelectBrandNewSuit")
     SetSuit(130)
+EndFunction
+Function SelectPetSuit(ObjectReference akSpeakerRef)
+    SetSuit(140)
+EndFunction
+Function SelectYokeSuit(ObjectReference akSpeakerRef)
+    SetSuit(150)
 EndFunction
 
 ;HEADGEAR

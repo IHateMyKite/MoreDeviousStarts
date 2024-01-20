@@ -32,11 +32,16 @@ Function Fragment_0()
     Sexlab.StripActor(Game.getPlayer(),none,false)
 
     libs.lockDevice(Game.getPlayer(),libs.gagBall)
+    BAHmain.MDSmain.WaitLock(0.1)
     libs.lockDevice(Game.getPlayer(),libs.blindfold)
+    BAHmain.MDSmain.WaitLock(0.1)
     libs.lockDevice(Game.getPlayer(),libs.plugSoulgemVag)
-    libs.lockDevice(Game.getPlayer(), libs.plugInflatableAn )
+    BAHmain.MDSmain.WaitLock(0.1)
+    libs.lockDevice(Game.getPlayer(),libs.plugInflatableAn)
+    BAHmain.MDSmain.WaitLock(0.1)
     libs.lockDevice(Game.getPlayer(),libs.armbinder)
-    libs.lockDevice(Game.getPlayer(),libs.harnessBody)
+    BAHmain.MDSmain.WaitLock(0.1)
+    libs.lockDevice(Game.getPlayer(),Game.GetFormFromFile(0x001E3C,"Devious Devices - Expansion.esm") as Armor) ;chastity harness, no collar. DUnno why its not added to libs script
 
     BAHmain.spawnHomeKey()
 
